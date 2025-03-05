@@ -1,0 +1,94 @@
+/* 🌟 NAVBAR CENTRÉE */
+.home-header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 80px;
+  }
+  
+  /* 🔳 Bouton Menu */
+  .menu-button {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* 📜 CONTENEUR PRINCIPAL - CENTRE TOUT LE CONTENU */
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre tout */
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    padding-top: 100px; /* Pour éviter que le contenu passe sous la navbar */
+  }
+  
+  /* 📊 CONTENEUR DES DIAGRAMMES - CENTRÉ */
+  .charts-wrapper {
+    display: flex;
+    flex-direction: column; /* Tout est centré en colonne */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 40px;
+  }
+  
+  /* 📊 STYLE DE CHAQUE DIAGRAMME */
+  .chart-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre chaque diagramme */
+    margin-bottom: 20px;
+  }
+  
+  /* 💰 SOLDE TOTAL - BIEN CENTRÉ */
+  .account-balance {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* 📂 MENU LATÉRAL */
+  .side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background: white;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* 📱 RESPONSIVE */
+  @media (max-width: 768px) {
+    .charts-wrapper {
+      flex-direction: column;
+    }
+  }
+  
