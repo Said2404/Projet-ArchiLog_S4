@@ -17,7 +17,7 @@ const Home = () => {
         <button className="menu-button" onClick={() => setIsMenuOpen(!isMenuOpen)}>☰</button>
       </header>
 
-      {/* 📊 Conteneur des diagrammes (alignés au centre) */}
+      {/* 📊 Conteneur des diagrammes (sur toute la largeur) */}
       <div className="charts-wrapper">
         <div className="chart-container">
           <PieChartComponent transactions={transactions} />

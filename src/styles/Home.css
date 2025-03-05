@@ -1,4 +1,4 @@
-/* 🌟 NAVBAR CENTRÉE */
+/* 🌟 NAVBAR CENTRÉE ET LARGE */
 .home-header {
     background-color: black;
     color: white;
@@ -20,7 +20,7 @@
   /* 🔳 Bouton Menu */
   .menu-button {
     position: absolute;
-    right: 20px;
+    right: 30px;
     top: 50%;
     transform: translateY(-50%);
     background: none;
@@ -34,61 +34,81 @@
   .home-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centre tout */
+    align-items: center; /* Centre verticalement */
     justify-content: center;
     width: 100%;
     min-height: 100vh;
     text-align: center;
-    padding-top: 100px; /* Pour éviter que le contenu passe sous la navbar */
+    padding-top: 120px; /* Ajusté pour éviter que le contenu passe sous la navbar */
   }
   
-  /* 📊 CONTENEUR DES DIAGRAMMES - CENTRÉ */
+  /* 📊 CONTENEUR DES DIAGRAMMES SUR UN GRAND ÉCRAN */
   .charts-wrapper {
     display: flex;
-    flex-direction: column; /* Tout est centré en colonne */
+    justify-content: space-between; /* Un à gauche, un à droite */
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 800px;
+    width: 90%;
+    max-width: 1400px; /* Adapté aux grands écrans */
     margin-top: 40px;
   }
   
   /* 📊 STYLE DE CHAQUE DIAGRAMME */
   .chart-container {
-    width: 100%;
+    width: 48%; /* Chaque diagramme prend presque la moitié */
     display: flex;
-    justify-content: center; /* Centre chaque diagramme */
-    margin-bottom: 20px;
+    justify-content: center;
   }
   
   /* 💰 SOLDE TOTAL - BIEN CENTRÉ */
   .account-balance {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     color: black;
-    margin-top: 20px;
+    margin-top: 40px;
     text-align: center;
   }
   
-  /* 📂 MENU LATÉRAL */
-  .side-menu {
+  /* 📂 MENU LATÉRAL - DOIT ÊTRE AU-DESSUS DE TOUT */
+.side-menu {
     position: fixed;
     top: 0;
     right: 0;
     width: 250px;
     height: 100%;
     background: white;
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 2000; /* Assure que la barre latérale est AU-DESSUS de la Navbar */
   }
   
-  /* 📱 RESPONSIVE */
-  @media (max-width: 768px) {
-    .charts-wrapper {
-      flex-direction: column;
-    }
+  /* 🔳 BOUTON DE FERMETURE DU MENU */
+  .close-menu {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+  
+  /* 🌟 NAVBAR FIXE (GARDER MAIS AJUSTER LE Z-INDEX) */
+  .home-header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Moins que la barre latérale */
+    height: 80px;
   }
   
