@@ -1,17 +1,17 @@
-/* 🌟 Conteneur principal */
+/* 🌟 CENTRAGE DE LA PAGE TRANSACTIONS */
 .transactions-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    padding-top: 100px;
+    padding-top: 120px; /* Pour éviter que le contenu passe sous la navbar */
   }
   
-  /* 📜 Liste des Transactions */
+  /* 📜 LISTE DES TRANSACTIONS */
   .transactions-list {
     width: 80%;
-    max-width: 600px;
+    max-width: 800px;
     background: white;
     padding: 20px;
     border-radius: 8px;
@@ -21,7 +21,7 @@
     list-style: none;
   }
   
-  /* 💰 Solde total */
+  /* 💰 SOLDE TOTAL - BIEN CENTRÉ */
   .account-balance {
     font-size: 24px;
     font-weight: bold;
@@ -30,7 +30,7 @@
     text-align: center;
   }
   
-  /* 📜 Formulaire */
+  /* 📜 FORMULAIRE DE TRANSACTION */
   .transaction-form {
     display: flex;
     flex-direction: column;
@@ -55,28 +55,5 @@
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s ease-in-out;
-  }
-  
-  .transaction-form button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* ❌ Bouton de suppression */
-  .delete-button {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-left: 10px;
-  }
-  
-  .delete-button:hover {
-    background-color: #c82333;
-  }
+    cursor:
   

@@ -1,4 +1,4 @@
-/* 🌟 NAVBAR CENTRÉE ET LARGE */
+/* 🌟 NAVBAR FIXE EN HAUT */
 .home-header {
     background-color: black;
     color: white;
@@ -17,98 +17,78 @@
     height: 80px;
   }
   
-  /* 🔳 Bouton Menu */
-  .menu-button {
-    position: absolute;
-    right: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  /* 📜 CONTENEUR PRINCIPAL - CENTRE TOUT LE CONTENU */
+  /* 📜 CONTENEUR PRINCIPAL - CENTRÉ */
   .home-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centre verticalement */
-    justify-content: center;
+    align-items: center;
     width: 100%;
     min-height: 100vh;
     text-align: center;
-    padding-top: 120px; /* Ajusté pour éviter que le contenu passe sous la navbar */
+    padding-top: 120px;
   }
   
-  /* 📊 CONTENEUR DES DIAGRAMMES SUR UN GRAND ÉCRAN */
+  /* 📊 CONTENEUR DES DIAGRAMMES - OCCUPE TOUTE LA LARGEUR */
   .charts-wrapper {
     display: flex;
-    justify-content: space-between; /* Un à gauche, un à droite */
+    justify-content: space-around; /* Répartition équilibrée */
     align-items: center;
-    width: 90%;
-    max-width: 1400px; /* Adapté aux grands écrans */
-    margin-top: 40px;
+    width: 90vw; /* 90% de la largeur de l’écran */
+    max-width: 1800px; /* Pour éviter que ça explose sur écran 4K */
+    margin-top: 20px;
+    padding: 0 2vw; /* Espacement léger */
   }
   
-  /* 📊 STYLE DE CHAQUE DIAGRAMME */
+  /* 📊 STYLE DES GRAPHIQUES */
   .chart-container {
-    width: 48%; /* Chaque diagramme prend presque la moitié */
+    width: 40vw; /* Chaque graphique fait 40% de la largeur de l’écran */
+    max-width: 600px; /* Ne pas dépasser 600px sur grand écran */
     display: flex;
     justify-content: center;
   }
   
-  /* 💰 SOLDE TOTAL - BIEN CENTRÉ */
+  /* 💰 SOLDE TOTAL - CENTRÉ SOUS LES GRAPHES */
   .account-balance {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
     color: black;
     margin-top: 40px;
     text-align: center;
   }
-  
-  /* 📂 MENU LATÉRAL - DOIT ÊTRE AU-DESSUS DE TOUT */
-.side-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 250px;
-    height: 100%;
-    background: white;
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 2000; /* Assure que la barre latérale est AU-DESSUS de la Navbar */
-  }
-  
-  /* 🔳 BOUTON DE FERMETURE DU MENU */
-  .close-menu {
-    background: none;
+/* 📌 CORRECTION DU MENU - MIEUX PLACÉ */
+.menu-button {
+    position: absolute;  /* Fixe dans la navbar */
+    top: 50%;  /* Centrage vertical */
+    right: 50px;  /* Décalé légèrement du bord droit */
+    transform: translateY(-50%); /* Ajustement vertical */
+    background-color: white;
     border: none;
-    font-size: 24px;
+    padding: 12px; /* Augmente légèrement pour le rendre plus visible */
+    border-radius: 8px; /* Coins légèrement arrondis */
     cursor: pointer;
-    align-self: flex-end;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    width: 50px;  /* Taille fixe */
+    height: 50px; /* Taille fixe */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
-  /* 🌟 NAVBAR FIXE (GARDER MAIS AJUSTER LE Z-INDEX) */
-  .home-header {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-    font-size: 28px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000; /* Moins que la barre latérale */
-    height: 80px;
+  /* 📌 Menu déroulant */
+.menu-container {
+    position: absolute;  /* Position fixe par rapport à la page */
+    top: 10px;  /* Un peu d'espace depuis le haut */
+    right: 20px;  /* Placer à droite de l'écran */
+    background-color: white;
+    border-radius: 8px;  /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: none;  /* Masqué par défaut */
+    z-index: 100;  /* Assurer qu'il se trouve au-dessus des autres éléments */
+  }
+  
+  /* 📌 Quand le menu est actif */
+  .menu-container.active {
+    display: block;  /* Afficher le menu quand la classe active est ajoutée */
   }
   
