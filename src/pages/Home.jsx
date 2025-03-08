@@ -7,6 +7,7 @@ const Home = () => {
   const transactions = JSON.parse(localStorage.getItem("transactions")) || [];
   const total = parseFloat(localStorage.getItem("total")) || 0;
 
+  // 🔥 État pour afficher le menu latéral
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -17,7 +18,7 @@ const Home = () => {
         <button className="menu-button" onClick={() => setIsMenuOpen(!isMenuOpen)}>☰</button>
       </header>
 
-      {/* 📊 Conteneur des diagrammes (sur toute la largeur) */}
+      {/* 📊 Conteneur des diagrammes */}
       <div className="charts-wrapper">
         <div className="chart-container">
           <PieChartComponent transactions={transactions} />
@@ -31,12 +32,17 @@ const Home = () => {
       <h3 className="account-balance">💰 Solde total : {total}€</h3>
 
       {/* 📂 Menu latéral */}
-      {isMenuOpen && (
-        <div className="side-menu">
-          <button onClick={() => setIsMenuOpen(false)}>✖</button>
-          <Link to="/transactions">📜 Voir les transactions</Link>
-        </div>
-      )}
+<div className={`sidebar-menu ${isMenuOpen ? "open" : ""}`}>
+  <button className="close-menu" onClick={() => setIsMenuOpen(false)}>✖</button>
+  <ul>
+    <li><Link to="/" onClick={() => setIsMenuOpen(false)}>🏠 Accueil</Link></li>
+    <li><Link to="/transactions" onClick={() => setIsMenuOpen(false)}>📜 Voir les transactions</Link></li>
+  </ul>
+</div>
+
+
+      {/* Overlay pour fermer le menu en cliquant à l'extérieur */}
+      {isMenuOpen && <div className="menu-overlay" onClick={() => setIsMenuOpen(false)}></div>}
     </div>
   );
 };

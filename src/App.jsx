@@ -13,27 +13,6 @@ function App() {
       </Routes>
     </Router>
   );
-  const [menuOpen, setMenuOpen] = useState(false);
-
-const toggleMenu = () => {
-  setMenuOpen(!menuOpen);
-};
-
-return (
-  <div>
-    <header>
-      <div className="menu-button" onClick={toggleMenu}>
-        <span>☰</span>
-      </div>
-    </header>
-
-    {/* Menu déroulant */}
-    <div className={`menu-container ${menuOpen ? 'active' : ''}`}>
-      <button>Voir les transactions</button>
-    </div>
-  </div>
-);
-
 }
 
 export default App;
