@@ -18,7 +18,7 @@ const db = mysql.createPool({
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
-  ssl: undefined // ✅ Mettre undefined pour désactiver proprement SSL
+  ssl: undefined 
 });
 
 // Vérifier la connexion MySQL
